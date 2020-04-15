@@ -13,12 +13,12 @@ set(CMAKE_VERBOSE_MAKEFILE OFF)
 set(CMAKE_BUILD_TYPE MinSizeRel)
 set(CMAKE_C_FLAGS "-O3")
 set(CMAKE_CXX_FLAGS "-O3 --std=c++1z")
-set(CMAKE_EXE_LINKER_FLAGS "-O3 -g0 --memory-init-file 0 \
+set(CMAKE_EXE_LINKER_FLAGS "-O1 -g0 --memory-init-file 0 \
 -s NO_FILESYSTEM=1 -s DEMANGLE_SUPPORT=0 -s ASSERTIONS=0 -s NO_EXIT_RUNTIME=1 \
 -s ALLOW_MEMORY_GROWTH=1 \
 -s WASM=1 -s DISABLE_EXCEPTION_CATCHING=1 \
--s EXPORTED_FUNCTIONS='[\"_compress\"]' \
--s EXTRA_EXPORTED_RUNTIME_METHODS='[\"ccall\", \"cwrap\"]'")
+-s EXPORTED_FUNCTIONS='[\"_compress\", \"_malloc\", \"_free\"]' \
+-s EXTRA_EXPORTED_RUNTIME_METHODS='[\"ccall\", \"cwrap\", \"getValue\"]'")
 
 include_directories(lib/imagequant)
 include_directories(lib/libpng)
