@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.7)
 
-include($ENV{EMSCRIPTEN}/cmake/Modules/Platform/Emscripten.cmake)
+include(/Users/yankechao/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake)
 
 project(image_compressor)
 
@@ -23,7 +23,7 @@ set(CMAKE_EXE_LINKER_FLAGS "-O3 -g0 --memory-init-file 0 \
 include_directories(lib/imagequant)
 include_directories(lib/libpng)
 include_directories(lib/zlib)
-include_directories($ENV{EMSCRIPTEN}/system/include)
+include_directories(lib/emscripten)
 
 set(OUTPUT_NAME hello)
 
